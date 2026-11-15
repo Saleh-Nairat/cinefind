@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.container{
+    margin: auto;
+    width: 98%;
+}
+
+input:focus{
+    outline: none;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    color: white;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>CineFind</title>
+</head>
+
+<body class="bg-[#10131C]">
+
+    <header class="container p-5 flex justify-between items-center">
+        <h3 class="text-[#9CA3AF] text-[12px] sm:text-[16px]">MOVIE EXPLORER</h3>
+        <div class="brand flex gap-2 items-center">
+            <h2 class="text-[18px] sm:text-[24px] font-semibold">CineFind</h2>
+            <div class="logo bg-[#EAB308] p-1.5 rounded-lg">
+                <img src="./imgs & icons/icons/cinema.svg" class="w-4" alt="cinema logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero flex flex-col gap-3 items-center pt-20 pb-14">
+            <h1 class="text-[24px] sm:text-[36px] font-semibold">.Discover your next movie.</h1>
+            <p class="text-[#9CA3AF] text-[12px] sm:text-[16px]">.Search for any movie and explore its details.</p>
+        </section>
+        <form
+            class="search w-[90%] sm:w-[70%] mx-auto flex justify-between items-center bg-[#202634] rounded-xl py-4 pl-4">
+            <div class="searching flex gap-2 w-full">
+                <button type="submit" class="cursor-pointer"><img src="./imgs & icons/icons/search.svg" class="w-4"
+                        alt="seearch logo"></button>
+                <input type="text" placeholder="Search movie title..."
+                    class="w-full placeholder:text-[13px] sm:placeholder:text-[16px]">
+            </div>
+            <button type="submit"
+                class="bg-[#EAB308] rounded-lg mr-2.5 sm:mr-3.5 px-1.5 sm:px-3.5 py-1 sm:py-2.5 text-black font-medium cursor-pointer hover:opacity-60 transition-all duration-300">Search</button>
+        </form>
+        <section class="movies container py-20">
+            <h3 class="font-semibold text-[20px]">movies</h3>
+        </section>
+    </main>
+
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>
