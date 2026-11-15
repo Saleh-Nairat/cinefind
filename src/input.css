@@ -5,6 +5,10 @@
     width: 98%;
 }
 
+img{
+    display: block;
+}
+
 input:focus{
     outline: none;
 }

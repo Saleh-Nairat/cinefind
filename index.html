@@ -41,12 +41,24 @@
             <button type="submit"
                 class="bg-[#EAB308] rounded-lg mr-2.5 sm:mr-3.5 px-1.5 sm:px-3.5 py-1 sm:py-2.5 text-black font-medium cursor-pointer hover:opacity-60 transition-all duration-300">Search</button>
         </form>
-        <section class="movies container py-20">
-            <h3 class="font-semibold text-[20px]">movies</h3>
+        <section class="movies-section w-[90%] sm:w-[70%] mx-auto flex flex-col gap-4 justify-center py-8">
+            <h3 class="font-semibold text-[20px] pl-1">movies</h3>
+            <div class="movies w-full flex flex-col gap-8">
+                <div class="movie flex gap-4 items-stretch">
+                    <img src="./imgs & icons/icons/cinema.svg" class="w-[20%]" alt="">
+                    <div class="details w-full flex flex-col justify-center gap-3">
+                        <h3 class="text-white text-[24px] font-semibold">Interstellar</h3>
+                        <p class="text-[#9CA3AF]">2014 · Sci-Fi · Adventure</p>
+                        <span class="text-[#EAB308] font-semibold">8.7/10</span>
+                        <p class="text-[#c4c8ce] text-[12px] sm:text-[16px]">A team of explorers travel beyond this galaxy to discover whether mankind has a future among the stars.</p>
+                        <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="">View Details</a></button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <script src="./javascript/script.js"></script>
+    <script src="./javascript/script.js" type="module"></script>
 </body>
 
 </html>
