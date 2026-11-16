@@ -1,16 +1,12 @@
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.7.9/+esm';
 
 const api_key = 'd2764e5027b3ac6457052f1be0dac63b';
+let populars = [] , movies = [];
+let result = '';
 
-const getPopular = async ()=>{
+const displayThePopularsMoviesWhenOpenTheWebsite = async()=>{
     const {data} = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`);
-    return data;
-}
-
-const displayPopular = async ()=>{
-    const {results} = await getPopular();
-    console.log(results);
-    let result = '';
+    const {results} = data;
     for(let i = 0 ; i < 10 ; ++i){
         result += 
         `
@@ -29,4 +25,43 @@ const displayPopular = async ()=>{
     document.querySelector(".movies").innerHTML = result;
 }
 
-displayPopular();
+displayThePopularsMoviesWhenOpenTheWebsite();
+
+// get the most popular populars
+const getPopular = async ()=>{
+    const populars = [];
+    const {data} = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`);
+    for(let i = 2 ; i <= Math.min(data.total_pages , 500) ; ++i){
+        const {data} = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=${i}`);
+        populars.push(...data.results);
+    }
+    return populars;
+}
+
+const init = async ()=>{
+    populars = await getPopular();
+    movies = populars;
+}
+
+init();
+
+document.querySelector(".show-more").onclick = async()=>{
+    console.log(movies);
+    for(let i = 0 ; i < 5 && movies.length ; ++i){
+        result += 
+        `
+            <div class="movie flex gap-4 items-stretch">
+                    <img src="https://image.tmdb.org/t/p/w500${movies[0].poster_path}" class="w-[20%] rounded-3xl" alt="${movies[0].overview}">
+                    <div class="details w-full flex flex-col justify-center gap-3">
+                        <h3 class="text-white text-[24px] font-semibold">${movies[0].title}</h3>
+                        <p class="text-[#9CA3AF]">${movies[0].release_date}</p>
+                        <span class="text-[#EAB308] font-semibold">${movies[0].vote_average}</span>
+                        <p class="text-[#c4c8ce] text-[12px] sm:text-[16px]">${movies[0].overview}</p>
+                        <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="">View Details</a></button>
+                    </div>
+                </div>
+        `
+        movies.shift();
+    }
+    document.querySelector(".movies").innerHTML = result;
+}
