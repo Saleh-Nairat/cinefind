@@ -175,6 +175,12 @@
   .visible {
     visibility: visible;
   }
+  .fixed {
+    position: fixed;
+  }
+  .z-9 {
+    z-index: 9;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -307,6 +313,9 @@
   }
   .bg-\[\#EAB308\] {
     background-color: #EAB308;
+  }
+  .bg-\[\#\] {
+    background-color: #;
   }
   .p-1 {
     padding: var(--spacing);
