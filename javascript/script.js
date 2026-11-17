@@ -1,7 +1,7 @@
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.7.9/+esm';
 
 const api_key = 'd2764e5027b3ac6457052f1be0dac63b';
-let populars = [] , movies = [];
+let movies = [];
 let result = '' , searching = false;
 
 const displayThePopularsMoviesWhenOpenTheWebsite = async()=>{
@@ -15,7 +15,10 @@ const displayThePopularsMoviesWhenOpenTheWebsite = async()=>{
                     <div class="details w-full flex flex-col justify-center gap-3">
                         <h3 class="text-white text-[24px] font-semibold">${results[i].title}</h3>
                         <p class="text-[#9CA3AF]">${results[i].release_date}</p>
-                        <span class="text-[#EAB308] font-semibold">${results[i].vote_average}</span>
+                        <div class="rating flex gap-1 items-center">
+                            <span class="text-[#EAB308] font-semibold">${results[i].vote_average}</span>
+                            <img src="./imgs & icons/icons/star.svg" alt="star rating icon" class="w-3">
+                        </div>
                         <p class="text-[#c4c8ce] text-[12px] sm:text-[16px]">${results[i].overview}</p>
                         <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="">View Details</a></button>
                     </div>
@@ -24,8 +27,6 @@ const displayThePopularsMoviesWhenOpenTheWebsite = async()=>{
     }
     document.querySelector(".movies").innerHTML = result;
 }
-
-displayThePopularsMoviesWhenOpenTheWebsite();
 
 // get the most popular populars
 const getPopular = async ()=>{
@@ -38,9 +39,13 @@ const getPopular = async ()=>{
     return populars;
 }
 
-const init = async ()=>{
-    populars = await getPopular();
-    movies = populars;
+const setMovies = async ()=>{
+    movies = await getPopular();
+}
+
+const init = async()=>{
+    await displayThePopularsMoviesWhenOpenTheWebsite();
+    setMovies();
 }
 
 init();
@@ -54,7 +59,10 @@ document.querySelector(".show-more").addEventListener("click" , async()=>{
                     <div class="details w-full flex flex-col justify-center gap-3">
                         <h3 class="text-white text-[24px] font-semibold">${searching ? movies[0].name : movies[0].title}</h3>
                         <p class="text-[#9CA3AF]">${searching ? movies[0].first_air_date : movies[0].release_date}</p>
-                        <span class="text-[#EAB308] font-semibold">${movies[0].vote_average}</span>
+                        <div class="rating flex gap-1 items-center">
+                            <span class="text-[#EAB308] font-semibold">${movies[0].vote_average}</span>
+                            <img src="./imgs & icons/icons/star.svg" alt="star rating icon" class="w-3">
+                        </div>
                         <p class="text-[#c4c8ce] text-[12px] sm:text-[16px]">${movies[0].overview}</p>
                         <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="">View Details</a></button>
                     </div>
@@ -94,7 +102,10 @@ document.querySelector(".search").addEventListener("submit" , async(e)=>{
                         <div class="details w-full flex flex-col justify-center gap-3">
                             <h3 class="text-white text-[24px] font-semibold">${movies[0].name}</h3>
                             <p class="text-[#9CA3AF]">${movies[0].first_air_date}</p>
-                            <span class="text-[#EAB308] font-semibold">${movies[0].vote_average}</span>
+                            <div class="rating flex gap-1 items-center">
+                                <span class="text-[#EAB308] font-semibold">${movies[0].vote_average}</span>
+                                <img src="./imgs & icons/icons/star.svg" alt="star rating icon" class="w-3">
+                            </div>
                             <p class="text-[#c4c8ce] text-[12px] sm:text-[16px]">${movies[0].overview}</p>
                             <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="">View Details</a></button>
                         </div>
