@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 .container{
-    margin: auto;
     width: 98%;
 }
 
