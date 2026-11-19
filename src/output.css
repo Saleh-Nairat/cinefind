@@ -223,6 +223,33 @@
   .table {
     display: table;
   }
+  .h-1 {
+    height: var(--spacing);
+  }
+  .h-70 {
+    height: calc(var(--spacing) * 70);
+  }
+  .h-120 {
+    height: calc(var(--spacing) * 120);
+  }
+  .h-130 {
+    height: calc(var(--spacing) * 130);
+  }
+  .h-150 {
+    height: calc(var(--spacing) * 150);
+  }
+  .h-159 {
+    height: calc(var(--spacing) * 159);
+  }
+  .h-160 {
+    height: calc(var(--spacing) * 160);
+  }
+  .h-200 {
+    height: calc(var(--spacing) * 200);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
@@ -235,8 +262,20 @@
   .w-50 {
     width: calc(var(--spacing) * 50);
   }
+  .w-\[0\%\] {
+    width: 0%;
+  }
+  .w-\[10\%\] {
+    width: 10%;
+  }
+  .w-\[15\%\] {
+    width: 15%;
+  }
   .w-\[20\%\] {
     width: 20%;
+  }
+  .w-\[50\%\] {
+    width: 50%;
   }
   .w-\[90\%\] {
     width: 90%;
@@ -317,6 +356,12 @@
   .bg-\[\#EAB308\] {
     background-color: #EAB308;
   }
+  .bg-contain {
+    background-size: contain;
+  }
+  .bg-cover {
+    background-size: cover;
+  }
   .p-1 {
     padding: var(--spacing);
   }
@@ -334,6 +379,9 @@
   }
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
@@ -374,8 +422,23 @@
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
   }
+  .text-\[1px\] {
+    font-size: 1px;
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
   .text-\[12px\] {
     font-size: 12px;
+  }
+  .text-\[13px\] {
+    font-size: 13px;
+  }
+  .text-\[14px\] {
+    font-size: 14px;
+  }
+  .text-\[15px\] {
+    font-size: 15px;
   }
   .text-\[16px\] {
     font-size: 16px;
@@ -412,6 +475,9 @@
   }
   .text-\[\#c4c8ce\] {
     color: #c4c8ce;
+  }
+  .text-\[1\] {
+    color: 1;
   }
   .text-black {
     color: var(--color-black);
@@ -480,17 +546,35 @@
     .sm\:mr-3\.5 {
       margin-right: calc(var(--spacing) * 3.5);
     }
+    .sm\:w-4 {
+      width: calc(var(--spacing) * 4);
+    }
+    .sm\:w-6 {
+      width: calc(var(--spacing) * 6);
+    }
     .sm\:w-\[70\%\] {
       width: 70%;
+    }
+    .sm\:gap-2 {
+      gap: calc(var(--spacing) * 2);
     }
     .sm\:px-3\.5 {
       padding-inline: calc(var(--spacing) * 3.5);
     }
+    .sm\:px-5 {
+      padding-inline: calc(var(--spacing) * 5);
+    }
     .sm\:py-2\.5 {
       padding-block: calc(var(--spacing) * 2.5);
     }
+    .sm\:text-\[14px\] {
+      font-size: 14px;
+    }
     .sm\:text-\[16px\] {
       font-size: 16px;
+    }
+    .sm\:text-\[18px\] {
+      font-size: 18px;
     }
     .sm\:text-\[24px\] {
       font-size: 24px;

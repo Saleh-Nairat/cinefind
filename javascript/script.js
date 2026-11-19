@@ -6,7 +6,7 @@ let result = '';
 
 const getCard = (card) => {
     return `
-    <div class="movie flex gap-4 items-stretch">
+    <div class="show flex gap-4 items-stretch">
         <img src="https://image.tmdb.org/t/p/w500${card.poster_path}" class="w-[20%] rounded-3xl" alt="${card.overview}">
             <div class="details w-full flex flex-col justify-center gap-3">
                 <h3 class="text-white text-[24px] font-semibold">${card.name}</h3>
