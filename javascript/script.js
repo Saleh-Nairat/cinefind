@@ -1,6 +1,6 @@
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.7.9/+esm';
+import api_key from '../key.js';
 
-const api_key = 'd2764e5027b3ac6457052f1be0dac63b';
 let shows = [];
 let result = '';
 
@@ -16,7 +16,7 @@ const getCard = (card) => {
                     <img src="./imgs & icons/icons/star.svg" alt="star rating icon" class="w-3">
                 </div>
                 <p class="text-[#c4c8ce] text-[12px] sm:text-[16px]">${card.overview}</p>
-                <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="./pages/details.html?${card.id}">View Details</a></button>
+                <button class="w-full text-black bg-[#EAB308] rounded-lg py-2 hover:opacity-60 transition-all duration-300 cursor-pointer"><a href="./pages/details.html?id=${card.id}">View Details</a></button>
             </div>
     </div>
     `
@@ -48,7 +48,7 @@ const setShows = async () => {
 
 const init = async () => {
     await displayThePopularsShowsWhenOpenTheWebsite();
-    setShows();
+    await setShows();
 }
 
 init();
